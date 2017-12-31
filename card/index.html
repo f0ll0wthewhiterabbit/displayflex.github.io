@@ -1,0 +1,63 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Открытка</title> <link rel="stylesheet" href="css/style.min.css" type="text/css"> <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet"> </head> <body> <div id="audio-controls"> <audio src="Jingle-bell-rock.mp3" id="song" autoplay="" loop=""></audio> </div> <div id="wrapper"> <div class="wrap"> <div class="snowflakes" data-count="10" id="snowflakes"></div> <div class="pattaya title"> <h1>Happy New Year!</h1> </div> <div class="snowman-wrapper"> <img src="img/snowman.png" alt="snowman was here xD" class="snowman"> </div> <div class="box-wrapper"> <img src="img/gift.png" alt="gift was here xD"> </div> </div> </div> <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> <script src="js/scripts.min.js"></script> <script> let canvas = document.createElement('canvas');
+		let ctx = canvas.getContext('2d');
+		canvas.width = 500;
+		canvas.height = 700;
+		document.body.appendChild(canvas);
+
+		let a, b, m, n, x, y;
+		m = 0;
+		n = 0;
+		function Draw(t) {
+			ctx.clearRect(0, 0, 500, 700);
+			console.log(t);
+
+			for (var i = 0; i < 50; i++) {
+				b = i * t + t;
+				x = 250 + 4*i*Math.sin(b);
+				y = 100 + 4*i*Math.cos(b) + 8*i;
+				ctx.fillStyle = 'hsl('+15*(i%15)+', 100%, 50%)';
+				ctx.fillRect(x, y, 6, 6);
+				ctx.beginPath();
+				ctx.arc(x, y, 10, 0, 2*Math.PI);
+				ctx.closePath();
+				ctx.fill();
+
+				if (i !== 0) {
+					ctx.strokeStyle = 'white';
+					ctx.beginPath();
+					ctx.moveTo(m, n);
+					ctx.lineTo(x, y);
+					ctx.closePath();
+					ctx.stroke();
+				}
+				m = x;
+				n = y;
+			}
+
+			let angle;
+			for (var i = 0; i < 7; i++) {
+				angle = i*4*Math.PI/5 + Math.PI/5;
+				x = 250 + 50*Math.sin(angle)*Math.sin(20*t);
+				y = 70 + 50*Math.cos(angle);
+				if (i !== 0) {
+					ctx.strokeStyle = 'red';
+					ctx.beginPath();
+					ctx.moveTo(m, n);
+					ctx.lineTo(x, y);
+					ctx.closePath();
+					ctx.stroke();
+				}
+
+				m = x;
+				n = y;
+			}
+		}
+
+		let t = 10;
+		function Render() {
+			t = t + 0.001;
+			Draw(t);
+			window.requestAnimationFrame(Render)
+		}
+
+		Render(); </script> </body> </html> 
