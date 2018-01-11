@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Барбершоп «Бородинский»</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="inner-page">
+
+<!-- Header -->
+<header class="main-header">
+	<div class="container main-header__layout">
+		<nav class="main-navigation">
+			<a class="logo-inner" href="index.html"><img src="img/header-logo.png" width="111" height="24" alt="Барбершоп «Бородинский»"></a>
+			<ul>
+				<li><a href="#">Информация</a></li>
+				<li><a href="#">Новости</a></li>
+				<li class="active"><a>Прайс-лист</a></li>
+				<li><a href="shop.html">Магазин</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+		</nav>
+
+		<div class="user-block">
+			<a class="user-block__login" href="#">Вход</a>
+		</div>
+	</div><!-- /container -->
+</header>
+<!-- /Header -->
+
+<!-- Inner-Main -->
+<main class="container">
+	<div class="inner-page-title">
+		<h1>Прайс-лист</h1>
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+			<li class="breadcrumbs__item breadcrumbs__item--current">Прайс-лист</li>
+		</ul>
+	</div>
+
+	<div class="inner-content">
+		<h2 class="big-heading">Истинно мужская классика</h2>
+
+		<div class="inner-columns">
+			<div class="inner-column-left">
+				<h2>Мы используем только <br>лучшие средства:</h2>
+				<ul class="custom-list-1">
+					<li>Baxter of California</li>
+					<li>Mr Natty</li>
+					<li>Suavecito</li>
+					<li>Malin+Goetz</li>
+				</ul>
+			</div><!-- /inner-column-left -->
+
+			<div class="inner-column-right">
+				<h2>Цены на услуги <br>наших мастеров:</h2>
+				<table class="prices-table">
+					<tr>
+						<td>Стрижка</td>
+						<td>1500 р.</td>
+					</tr>
+					<tr>
+						<td>Стрижка бороды</td>
+						<td>500 р.</td>
+					</tr>
+					<tr>
+						<td>Накрутка усов</td>
+						<td>350 р.</td>
+					</tr>
+				</table>
+			</div><!-- /inner-column-right -->
+		</div><!-- /inner-columns -->
+
+
+		<div class="inner-columns">
+			<h2>Несколько слов о нас:</h2>
+			<div class="inner-column-left">
+				<p class="short-text">Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.</p>
+			</div><!-- /inner-column-left -->
+
+			<div class="inner-column-right">
+				<p class="short-text">Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!</p>
+			</div><!-- /inner-column-right -->
+		</div><!-- /inner-columns -->
+	</div><!-- /inner-content -->
+</main>
+<!-- /Inner-Main -->
+
+<!-- Footer -->
+<footer class="main-footer inner-page-footer">
+	<div class="container main-footer__layout">
+		<section class="main-footer__contacts footer-contacts">
+			<p>
+				Барбершоп «Бородинский»<br>
+				Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8
+			</p>
+			<a class="footer-contacts__link js-open-map" href="#">
+				Как нас найти?
+			</a>
+			<p>
+				Телефон: +7 (495) 666-02-66
+			</p>
+		</section>
+
+		<section class="footer-social">
+			<p>Давайте дружить!</p>
+			<a class="footer-social__btn footer-social__btn--vk" href="#">Вконтакте</a>
+			<a class="footer-social__btn footer-social__btn--fb" href="#">Фейсбук</a>
+			<a class="footer-social__btn footer-social__btn--inst" href="#">Инстаграм</a>
+		</section>
+
+		<section class="main-footer__copyright footer-copyright">
+			<p>Разработано:</p>
+			<a class="btn" href="#">htmlacademy.ru</a>
+		</section>
+	</div>
+</footer>
+<!-- /Footer -->
+
+<!-- Modal Login -->
+<div class="modal-content">
+	<button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
+
+	<h2 class="modal-content__title">Личный кабинет</h2>
+	<p>Введите пожалуйста свой логин и пароль</p>
+
+	<form class="modal-content__form login-form" method="POST" action="#">
+		<input class="login-form__input login-form__input--icon-user" type="text" name="login" placeholder="Логин">
+		<input class="login-form__input login-form__input--icon-password" type="password" name="password" placeholder="Пароль">
+		<label class="login-form__checkbox">
+			<input type="checkbox" name="remember" checked>
+			<span class="login-form__checkbox-indicator"></span>
+			Запомните меня
+		</label>
+		<a class="login-form__restore" href="#">Я забыл пароль!</a>
+		<button class="btn" type="submit">Войти</button>
+	</form>
+</div><!-- /modal-content -->
+<!-- /Modal Login -->
+
+<!-- Modal Map -->
+<div class="modal-content-map modal-map">
+	<button class="modal-map__close" type="button" title="Закрыть">Закрыть</button>
+	<div id="yandex-map"></div>
+
+	<!-- <div class="google-map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1610.356970332795!2d30.22119311934007!3d55.19396247562556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c57155cc1b331b%3A0xc1ba72951ccb1d84!2z0L_RgNC-0YHQv9C10LrRgiDQpNGA0YPQvdC30LUgMjYvNCwg0JLQuNGC0LXQsdGB0Lo!5e0!3m2!1sru!2sby!4v1514200678976" width="752" height="546" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div> -->
+<!-- /Modal Map -->
+
+<!-- Modal Overlay -->
+<div class="modal-overlay"></div>
+<!-- /Modal Overlay -->
+
+<!-- Yandex Map -->
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad3fbaf543af923cf794598c6ef7341942cfdb6ba0f55a3344b1b2401aa809757&amp;width=752&amp;height=546&amp;id=yandex-map&amp;lang=ru_RU&amp;scroll=false"></script>
+<!-- /Yandex Map -->
+
+<script src="js/login-popup.js"></script>
+<script src="js/map-popup.js"></script>
+
+</body>
+</html>
