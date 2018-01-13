@@ -22,7 +22,7 @@
 		</nav>
 
 		<div class="user-block">
-			<a class="user-block__login" href="#">Вход</a>
+			<a class="user-block__login" href="#">Вход</a> <!-- href="login.html - если делать страницу логина при nojs -->
 		</div>
 	</div><!-- /container -->
 </header>
@@ -98,10 +98,22 @@
 			<h2 class="index-content__title">Записаться</h2>
 			<p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
 			<form class="appointment-form" method="POST" action="#">
-				<input type="text" name="date" placeholder="Дата">
-				<input type="text" name="time" placeholder="Время">
-				<input type="text" name="name" placeholder="Ваше имя">
-				<input type="tel" name="phone" placeholder="Телефон">
+				<p class="appointment-form__item">
+					<label class="visually-hidden" for="appointment-date">Дата</label>
+					<input id="appointment-date" type="text" name="date" placeholder="Дата">
+				</p>
+				<p class="appointment-form__item">
+					<label class="visually-hidden" for="appointment-time">Время</label>
+					<input id="appointment-time" type="text" name="time" placeholder="Время">
+				</p>
+				<p class="appointment-form__item">
+					<label class="visually-hidden" for="appointment-name">Ваше имя</label>
+					<input id="appointment-name" type="text" name="name" placeholder="Ваше имя">
+				</p>
+				<p class="appointment-form__item">
+					<label class="visually-hidden" for="appointment-phone">Телефон</label>
+					<input id="appointment-phone" type="tel" name="phone" placeholder="Телефон">
+				</p>
 				<button class="btn" type="submit">Отправить</button>
 			</form>
 		</section>
@@ -145,17 +157,25 @@
 	<button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
 
 	<h2 class="modal-content__title">Личный кабинет</h2>
-	<p>Введите пожалуйста свой логин и пароль</p>
+	<p class="modal-content__insruction">Введите пожалуйста свой логин и пароль</p>
 
 	<form class="modal-content__form login-form" method="POST" action="#">
-		<input class="login-form__input login-form__input--icon-user" type="text" name="login" placeholder="Логин">
-		<input class="login-form__input login-form__input--icon-password" type="password" name="password" placeholder="Пароль">
-		<label class="login-form__checkbox">
-			<input type="checkbox" name="remember" checked>
-			<span class="login-form__checkbox-indicator"></span>
-			Запомните меня
-		</label>
-		<a class="login-form__restore" href="#">Я забыл пароль!</a>
+		<p class="login-form__item">
+			<label class="visually-hidden" for="user-login">Логин</label>
+			<input class="login-form__input login-form__input--icon-user" id="user-login" type="text" name="login" placeholder="Логин">
+		</p>
+		<p class="login-form__item">
+			<label class="visually-hidden" for="user-password">Пароль</label>
+			<input class="login-form__input login-form__input--icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
+		</p>
+		<p class="login-form__login-password-info">
+			<label class="login-form__checkbox">
+				<input type="checkbox" name="remember" checked>
+				<span class="login-form__checkbox-indicator"></span>
+				Запомните меня
+			</label>
+			<a class="login-form__restore" href="#">Я забыл пароль!</a>
+		</p>
 		<button class="btn" type="submit">Войти</button>
 	</form>
 </div><!-- /modal-content -->
@@ -164,6 +184,8 @@
 <!-- Modal Map -->
 <div class="modal-content-map modal-map">
 	<button class="modal-map__close" type="button" title="Закрыть">Закрыть</button>
+	<h2 class="visually-hidden">Как до нас добраться</h2>
+	<p class="visually-hidden">Наш адрес: г. Санкт-Петербург, б. Конюшенная, д. 19/8</h2>
 	<div id="yandex-map"></div>
 
 	<!-- <div class="google-map">
