@@ -36,7 +36,7 @@ form.addEventListener('submit', function(event) {
 	}
 });
 
-window.addEventListener('keydown', function() {
+window.addEventListener('keydown', function(event) {
 	if (event.keyCode === 27) {
 		if (popup.classList.contains("modal-content--show")) {
 			popup.classList.remove("modal-content--show");
