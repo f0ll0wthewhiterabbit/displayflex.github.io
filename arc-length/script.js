@@ -17,7 +17,7 @@ calculateButton.addEventListener('click', function(e) {
 
 	// let radius = (heightValue / 2) + (Math.pow(widthValue, 2) / (8 * heightValue));
 
-	resultArea.innerHTML += "Длина = " + widthValue + " см <br>";
+	resultArea.innerHTML += "Ширина = " + widthValue + " см <br>";
 	resultArea.innerHTML += "Высота = " + heightValue + " см <br><br>";
 	resultArea.innerHTML += "<b>Длина дуги = " + arcLength + " см <b><br>";
 	resultArea.innerHTML += "<small>(по формуле Гюйгенса)</small><br>";
