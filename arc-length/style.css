@@ -3,5 +3,9 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh; */
-	padding-top: 100px;
+	padding-top: 50px;
+}
+
+.title {
+	margin-bottom: 25px;
 }
