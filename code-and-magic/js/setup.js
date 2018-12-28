@@ -82,8 +82,19 @@
 	};
 
 	var setupFormSubmitHandler = function (evt) {
-		window.backend.save(new FormData(setupForm), saveSuccessHandler, saveErrorHandler);
 		evt.preventDefault();
+		var wizardCopy = document.querySelector('svg').cloneNode(true);
+
+		wizardCopy.querySelector('#wizard-coat').style.fill = wizardCoat.style.fill;
+		wizardCopy.querySelector('#wizard-eyes').style.fill = wizardEyes.style.fill;
+
+		var wizardBase64Right = window.svg2base64(wizardCopy);
+
+		wizardCopy.querySelector('#wizard').setAttribute('transform', 'translate(62, 0) scale(-1, 1)');
+		var wizardBase64Left = window.svg2base64(wizardCopy);
+
+		window.restartGame(wizardBase64Right, wizardBase64Left);
+		window.backend.save(new FormData(setupForm), saveSuccessHandler, saveErrorHandler);
 	};
 
 	wizardCoat.addEventListener('click', wizardCoatClickHandler);
