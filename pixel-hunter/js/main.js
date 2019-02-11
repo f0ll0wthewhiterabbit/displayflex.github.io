@@ -881,6 +881,7 @@
 		}
 
 		exit() {
+			this.stopGame();
 			this.model.restart();
 			Application.showGreeting();
 			document.body.removeChild(this.confirm.element);
