@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Kiss Hanna</title>
+		<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<!-- <p id="timer"></p> -->
+			<h1 id="head">Time to kiss her:</h1>
+			<ul>
+				<li><span id="years"></span>Years</li>
+				<li><span id="days"></span>Days</li>
+				<li><span id="hours"></span>Hours</li>
+				<li><span id="minutes"></span>Minutes</li>
+				<li><span id="seconds"></span>Seconds</li>
+			</ul>
+		</div>
+
+		<script>
+			const countDownDate = new Date('Jul 3, 2083 02:00:00').getTime();
+
+			const intervalId = setInterval(() => {
+				const now = new Date().getTime();
+				const distance = countDownDate - now;
+
+				const years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365));
+				const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+				const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				document.getElementById('years').innerText = years;
+				document.getElementById('days').innerText = days;
+				document.getElementById('hours').innerText = hours;
+				document.getElementById('minutes').innerText = minutes;
+				document.getElementById('seconds').innerText = seconds;
+
+				if (distance < 0) {
+					clearInterval(intervalId);
+					document.getElementById('head').innerText = 'I STILL LOVE HER';
+					document.querySelectorAll('ul')[0].innerHTML = '';
+				}
+			}, 1000);
+		</script>
+	</body>
+</html>
